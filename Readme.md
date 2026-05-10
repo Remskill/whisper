@@ -2,247 +2,175 @@
 
 # Whisper by Remskill
 
-### Voice to Text. In Seconds. Everywhere.
+### Hold a key. Talk. Text appears where your cursor is.
 
-**Fast, private, offline speech-to-text transcription for Windows and macOS**
-
-Powered by OpenAI's Whisper | 99% Accuracy | 90+ Languages | 100% Local Processing
+**Voice-to-text and real-time web answers for Windows and macOS — pasted straight into the app you're already in.**
 
 [![Download](https://img.shields.io/badge/Download-whisper.remskill.com-blue?style=for-the-badge)](https://whisper.remskill.com/download)
 [![Version](https://img.shields.io/github/v/release/Remskill/whisper?style=for-the-badge&label=Latest)](https://github.com/Remskill/whisper/releases/latest)
-[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS-lightgrey?style=for-the-badge)]()
+[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20Apple%20Silicon-lightgrey?style=for-the-badge)]()
+[![Issues](https://img.shields.io/github/issues/Remskill/whisper?style=for-the-badge)](https://github.com/Remskill/whisper/issues)
 
-[Website](https://whisper.remskill.com) | [Download](https://whisper.remskill.com/download) | [Pricing](https://whisper.remskill.com/pricing) | [FAQ](https://whisper.remskill.com/faq)
+[Website](https://whisper.remskill.com) · [Download](https://whisper.remskill.com/download) · [Pricing](https://whisper.remskill.com/pricing) · [FAQ](https://whisper.remskill.com/faq) · [Report a bug](https://github.com/Remskill/whisper/issues/new/choose)
 
 ---
 
-**Whisper by Remskill** is a lightweight (~20 MB) desktop app that converts speech to text directly on your machine. No cloud. No subscriptions required. Your voice never leaves your device.
+Press your hotkey, speak, release. The text — transcribed locally on your machine, or via OpenAI in the cloud (your call, your API key) — lands at the cursor in any app: Word, Gmail, Slack, VS Code, Notion, Figma, your browser, anywhere.
 
-Press a hotkey, speak, and the transcribed text appears wherever your cursor is &mdash; Word, Google Docs, Gmail, Slack, VS Code, Notion, or any other app.
+You can also ask it a question and have a real-time, web-grounded answer pasted at the cursor instead of a transcript. No tab-switching, no copy-paste.
 
 </div>
 
 ---
 
-## Why Whisper by Remskill?
+## Issues, bugs, feature requests
 
-| | Feature | Description |
-|---|---|---|
-| :lock: | **100% Private** | All transcription happens locally. Your voice data never touches a server. |
-| :airplane: | **Works Offline** | No internet required. Full functionality in airplane mode. |
-| :zap: | **3x Faster Than Typing** | Speak naturally and get accurate text instantly. |
-| :dart: | **99% Accurate** | Powered by OpenAI's Whisper, the industry standard for speech recognition. |
-| :earth_americas: | **90+ Languages** | English, Spanish, French, German, Chinese, Japanese, Korean, Russian, and many more. |
-| :moneybag: | **$99 Lifetime** | One-time purchase. No subscriptions. All future updates included. |
+**File anything here:** [github.com/Remskill/whisper/issues](https://github.com/Remskill/whisper/issues)
+
+This repo is the public bug tracker for the Whisper desktop app. The source code lives in private repos, but every issue, every feature request, every "this label is confusing" — please file it here.
+
+For billing, account, or sales questions, email [whisper@remskill.com](mailto:whisper@remskill.com) instead — those don't belong on a public tracker.
 
 ---
 
-## How It Works
+## What it actually does
 
-1. **Press the hotkey** &mdash; `Ctrl+Space` on Windows, `Cmd+Shift+Space` on macOS
-2. **Speak** &mdash; A small overlay shows you're recording
-3. **Release** &mdash; Text is transcribed and pasted where your cursor is
+Three things, all triggered by the same hotkey:
 
-That's it. Works in any application, any text field, anywhere on your desktop.
+1. **Dictation** — you speak, transcribed text appears at the cursor. Works in any app.
+2. **Voice command + web search** *(Cloud mode only)* — you ask a question, the app searches the web via OpenAI and pastes a real, current answer. Built on the OpenAI Responses API.
+3. **AI enhancement** — optional pass that fixes punctuation, formatting, tone, or rewrites with a custom preset (email draft, meeting notes, code comment style, your own).
 
----
+You pick which transcription engine runs each one. There are three:
 
-## Features
+| Engine | Where it runs | Strengths | Trade-offs |
+|---|---|---|---|
+| **OpenAI Cloud** *(BYOK)* | OpenAI servers | Best-in-class accuracy. Web search. `gpt-4o-mini-transcribe` and `gpt-4o-transcribe`. Cloud AI enhancement via `gpt-5-mini` / `gpt-5-nano` / `gpt-5`. | Needs internet. Audio leaves your machine. You supply your own OpenAI API key — Remskill takes no cut. |
+| **Parakeet** *(local)* | Your machine, pure Rust | 5–10× faster than Whisper on CPU. ~600 MB. English + 24 EU languages. | Quality is good but not Whisper-large. No translate-to-English. |
+| **Whisper** *(local, 8 models)* | Your machine, pure Rust | 99 languages. Translate-to-English. Custom vocabulary, beam size, hotwords. | Slower than Parakeet. |
 
-### Speech-to-Text Transcription
-- **7 Whisper models** &mdash; Choose between speed and accuracy
-- **Auto language detection** &mdash; Or set your preferred language
-- **Translate to English** &mdash; Speak in any language, get English text
-- **Proper punctuation** &mdash; Sentences, commas, and periods included automatically
-- **Filler word removal** &mdash; Automatically cleans up "um", "uh", "like"
-
-### Global Hotkey
-- **Works in any app** &mdash; Word, Google Docs, Gmail, Slack, VS Code, Notion, browsers, and more
-- **Hold-to-record** &mdash; Hold the hotkey to record, release to transcribe
-- **Toggle mode** &mdash; Or press once to start, press again to stop
-- **Visual overlay** &mdash; See recording status without switching windows
-
-### Custom Vocabulary (Hotwords)
-- **Add names and brands** &mdash; Ensure proper spelling of custom terms
-- **Technical jargon** &mdash; Domain-specific terminology recognized correctly
-- **Medical and legal terms** &mdash; Specialized vocabulary support
-
-### AI Enhancement (Optional)
-- **Local AI processing** &mdash; Powered by Ollama, runs on your machine
-- **Refine transcriptions** &mdash; Fix grammar, formatting, and style
-- **Custom presets** &mdash; Save AI enhancement profiles for different use cases
-- **Completely optional** &mdash; Works perfectly without AI
-
-### History and Export
-- **Browse past transcriptions** &mdash; Searchable transcription history
-- **Copy and export** &mdash; Access any previous transcription
-- **Original + enhanced** &mdash; Both versions saved when using AI
-
-### Instruction Presets
-- **Built-in presets** &mdash; Meeting notes, email drafts, code comments, and more
-- **Custom presets** &mdash; Create your own transcription styles
-- **Quick switching** &mdash; Change presets with a few clicks
+**There is no Python sidecar.** Local transcription runs in-process via [`transcribe-rs`](https://github.com/floneum/floneum) — pure Rust, no Python, no PyTorch, no separate runtime to install or break.
 
 ---
 
-## Models
+## Pricing — free, then optional Pro
 
-Choose the right model for your workflow:
+The entire local pipeline is **free for any signed-in user**. No payment method required at signup. That includes:
 
-### English-Only (Optimized)
+- Whisper (all 8 models)
+- Parakeet
+- Local AI enhancement via [Ollama](https://ollama.com/)
+- Hotkey, history, presets, hotwords
+- Hardware acceleration, model downloads
+- Settings, custom vocabulary, FAQ — everything
 
-| Model | Size | Speed | Best For |
-|-------|------|-------|----------|
-| **Small** | ~140 MB | Fast | Quick dictation, voice memos |
-| **Medium** | ~480 MB | Balanced | Daily English use (recommended) |
-| **Large** | ~1.5 GB | Accurate | Professional transcription |
+**Whisper Pro** ($9.99/mo · $79.99/yr · $99 lifetime) adds the Cloud surface:
 
-### Multilingual (90+ Languages)
+- OpenAI cloud transcription
+- Cloud AI enhancement (`gpt-5-mini` and friends)
+- OpenAI web search via the Responses API
 
-| Model | Size | Speed | Best For |
-|-------|------|-------|----------|
-| **Small** | ~480 MB | Fast | Multi-language dictation |
-| **Medium** | ~1.5 GB | Balanced | Multi-language daily use |
-| **Large** | ~3 GB | Accurate | Professional multi-language |
-| **Turbo** | ~1.6 GB | Fast | Large-quality at higher speed |
+Pro ships with a 7-day Cloud trial when you upgrade (card required for the upgrade flow only — never at first signup). Team plans for 5 / 10 / 20 seats also available.
 
----
-
-## Who Is This For?
-
-### Developers
-Write code comments, documentation, commit messages, and technical specs 3x faster. Supports custom vocabulary for technical terms.
-
-[Learn more](https://whisper.remskill.com/for-developers)
-
-### Content Creators
-Draft blog posts, video scripts, social media content, and newsletters at the speed of thought. Speak naturally, edit later.
-
-[Learn more](https://whisper.remskill.com/for-creators)
-
-### Business Professionals
-Capture meeting notes, compose emails, write reports instantly. 100% local processing keeps confidential data secure.
-
-[Learn more](https://whisper.remskill.com/for-business)
-
-### Students
-Write essays, lecture notes, and research summaries faster. Focus on ideas, not typing speed.
-
-[Learn more](https://whisper.remskill.com/for-students)
-
-### Healthcare Professionals
-True privacy compliance &mdash; 100% local processing, zero cloud dependencies, works air-gapped. Your patients' data stays on your machine.
-
-[Learn more](https://whisper.remskill.com/for-healthcare)
-
-### Legal Professionals
-Attorney-client privilege stays privileged. Document depositions, case notes, and briefs with complete data security.
-
-[Learn more](https://whisper.remskill.com/for-legal)
+Stripe handles billing. [See current pricing →](https://whisper.remskill.com/pricing)
 
 ---
 
-## Platform Support
+## How it works
 
-| Platform | Architecture | Hotkey | Installer |
-|----------|-------------|--------|-----------|
-| **Windows 10/11** | x86_64 | `Ctrl + Space` | `.msi` |
-| **macOS** (Intel) | x86_64 | `Cmd + Shift + Space` | `.dmg` |
-| **macOS** (Apple Silicon) | arm64 | `Cmd + Shift + Space` | `.dmg` |
+1. **Press the hotkey.** Default is `Ctrl + Space` on Windows and **Right ⌥ (Right Option)** on macOS — both rebindable.
+2. **Speak.** A small overlay shows you're recording.
+3. **Release.** Transcribed text is pasted where your cursor is.
 
-### System Requirements
-
-- **Minimum**: 4 GB RAM, 500 MB storage + model size
-- **Recommended**: 8 GB RAM, NVIDIA GPU with CUDA (optional, for faster processing)
+Under the hood: the hotkey starts an audio capture, the audio is fed to your chosen engine (Cloud, Parakeet, or Whisper), the result optionally goes through AI enhancement, then it's pasted at the cursor via OS-level clipboard handoff.
 
 ---
 
-## Pricing
+## Models (local)
 
-| Plan | Price | Details |
-|------|-------|---------|
-| **7-Day Free Trial** | Free | All features, no credit card required |
-| **Lifetime** | $99 one-time | All future updates included forever |
-| **Monthly** | $9.99/month | Cancel anytime |
-| **Yearly** | $79/year | Save vs. monthly |
+Pick your trade-off between speed, size, and accuracy. The first run downloads the model; everything else is offline.
 
-Team plans available for 5, 10, and 20 seats.
+### English-optimized
 
-7-day money-back guarantee on all paid plans.
+| Model | Size | Speed | Best for |
+|---|---|---|---|
+| Base | ~140 MB | Fastest | Quick dictation |
+| Small | ~480 MB | Fast | Voice memos |
+| **Medium** *(recommended)* | ~1.5 GB | Balanced | Daily English use |
+| Turbo *(distil-large-v3)* | ~1.5 GB | Fast | Large-quality at higher speed |
 
-[View pricing](https://whisper.remskill.com/pricing) | [Start free trial](https://whisper.remskill.com/download)
+### Multilingual (99 languages, Whisper)
 
----
+| Model | Size | Speed | Best for |
+|---|---|---|---|
+| Small | ~480 MB | Fast | Multi-language dictation |
+| Medium | ~1.5 GB | Balanced | Multi-language daily |
+| Large v3 | ~3 GB | Quality | Professional multi-language |
+| Large v3 Turbo | ~1.62 GB | Fast | Large-v3 quality, faster |
 
-## Download
+### English + 24 EU languages (Parakeet)
 
-Get started in under a minute:
+| Model | Size | Speed | Best for |
+|---|---|---|---|
+| Parakeet v3 | ~600 MB | Fastest local | English + EU dictation when speed matters |
 
-1. [Download the installer](https://whisper.remskill.com/download) for your platform
-2. Install and launch the app
-3. Download a Whisper model (we recommend **Medium** for English)
-4. Press `Ctrl+Space` (Windows) or `Cmd+Shift+Space` (macOS) and start talking
-
-[Download for Windows](https://whisper.remskill.com/download) | [Download for macOS](https://whisper.remskill.com/download)
-
----
-
-## Automatic Updates
-
-The app checks for updates automatically. When a new version is available, you'll see a banner with a one-click update button. Lifetime users receive all updates forever at no additional cost.
+Switch models from Settings → Transcription. You can keep multiple models on disk and swap between them.
 
 ---
 
-## Privacy and Security
+## Privacy — exactly what's true, no fudging
 
-- **100% local processing** &mdash; Voice data is never sent to any server
-- **Works offline** &mdash; Disconnect from the internet and verify it still works
-- **No telemetry** &mdash; We don't collect usage data
-- **Air-gapped compatible** &mdash; Use in secure facilities without network access
-- **Your data, your machine** &mdash; Transcriptions are stored locally in SQLite
+**Local mode (Parakeet or Whisper):** audio never leaves your machine. Disconnect the network and everything still works. No telemetry on transcripts. Transcriptions are stored locally in SQLite.
 
-[Read our security details](https://whisper.remskill.com/security) | [Privacy policy](https://whisper.remskill.com/privacy)
+**Cloud mode (OpenAI):** audio goes to OpenAI's servers using your own API key under your OpenAI account, governed by [OpenAI's API data policy](https://openai.com/policies/api-data-usage-policies). API inputs are not used for training by default. Remskill servers do not see, log, or store the audio.
 
----
+**Web search:** when you use the voice-command + web-search flow, your question is sent to OpenAI and the response includes web context. Transcripts of these queries are stored locally in your history unless you delete them.
 
-## FAQ
-
-**Is my voice data sent to the cloud?**
-No. All transcription happens entirely on your machine. Your voice never leaves your device.
-
-**Does it work without internet?**
-Yes. After downloading a model, the app works fully offline.
-
-**What languages are supported?**
-90+ languages with multilingual models, including auto-detection. English-only models provide optimized performance for English.
-
-**Can I use it in any app?**
-Yes. The global hotkey works across all applications &mdash; text editors, browsers, email clients, chat apps, IDEs, and more.
-
-**What's the difference between models?**
-Smaller models are faster but less accurate. Larger models are more accurate but use more memory and processing time. See the [models section](#models) above.
-
-**Is there a free trial?**
-Yes. 7-day free trial with all features, no credit card required.
-
-[More questions? Visit our FAQ](https://whisper.remskill.com/faq)
+[Full privacy policy →](https://whisper.remskill.com/privacy) · [Security details →](https://whisper.remskill.com/security)
 
 ---
 
-## Built With
+## Platform support
 
-- [OpenAI Whisper](https://github.com/openai/whisper) &mdash; Speech recognition model
-- [faster-whisper](https://github.com/SYSTRAN/faster-whisper) &mdash; High-performance Whisper implementation
-- [Tauri](https://tauri.app/) &mdash; Cross-platform desktop framework
-- [Ollama](https://ollama.com/) &mdash; Local AI enhancement (optional)
+| Platform | Architecture | Status | Default hotkey | Installer |
+|---|---|---|---|---|
+| **Windows 10/11** | x86_64 | Supported, ships today | `Ctrl + Space` | `.exe` |
+| **macOS** (Apple Silicon) | arm64 | Supported, ships today | Right ⌥ | `.dmg` |
+| **macOS** (Intel) | x86_64 | Deprecated — no longer built | — | — |
+| **Linux** | — | Not supported | — | — |
+
+### System requirements
+
+- **Minimum:** 4 GB RAM, ~500 MB free + your chosen model size
+- **Recommended:** 8 GB RAM. NVIDIA GPU with CUDA on Windows accelerates Whisper, but isn't required.
+
+---
+
+## Auto-updates
+
+The app checks for updates automatically and shows a one-click update banner when a new version is available. Lifetime users receive all updates forever at no additional cost. Releases are published to Cloudflare R2; the desktop app verifies updates against a per-platform signed manifest.
+
+---
+
+## Built with
+
+- [Tauri](https://tauri.app/) — Rust + system webview, lightweight installer
+- [transcribe-rs](https://github.com/floneum/floneum) — pure-Rust Whisper + Parakeet, no Python sidecar
+- [OpenAI](https://platform.openai.com/) — Cloud transcription, AI enhancement, web search (BYOK)
+- [Ollama](https://ollama.com/) — local AI enhancement
+- [Supabase](https://supabase.com/) — auth, account, device registration
+
+The marketing site, account portal, and billing API are a separate Next.js app deployed at [whisper.remskill.com](https://whisper.remskill.com).
 
 ---
 
 ## Support
 
-- **Email**: whisper@remskill.com
-- **Website**: [whisper.remskill.com](https://whisper.remskill.com)
-- **FAQ**: [whisper.remskill.com/faq](https://whisper.remskill.com/faq)
+- **Bugs / feature requests:** [github.com/Remskill/whisper/issues](https://github.com/Remskill/whisper/issues)
+- **Billing, account, sales:** [whisper@remskill.com](mailto:whisper@remskill.com)
+- **Live chat:** [whisper.remskill.com/contact](https://whisper.remskill.com/contact)
+- **Security disclosures:** [security@whisper.remskill.com](mailto:security@whisper.remskill.com)
+- **FAQ:** [whisper.remskill.com/faq](https://whisper.remskill.com/faq)
 
 ---
 
@@ -250,11 +178,13 @@ Yes. 7-day free trial with all features, no credit card required.
 
 Proprietary software. All rights reserved. See [Terms of Service](https://whisper.remskill.com/terms).
 
+This repository contains the public README and release artifacts only. The desktop app source and the marketing site source live in private repositories.
+
 ---
 
 <div align="center">
 
-**[Download Whisper by Remskill](https://whisper.remskill.com/download)** &mdash; Voice to text, privately, on your machine.
+**[Download Whisper by Remskill](https://whisper.remskill.com/download)** — voice and web answers, at the cursor, in any app.
 
 Made by [Remskill](https://remskill.com)
 
