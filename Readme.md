@@ -152,18 +152,6 @@ The app checks for updates automatically and shows a one-click update banner whe
 
 ---
 
-## Built with
-
-- [Tauri](https://tauri.app/) — Rust + system webview, lightweight installer
-- [transcribe-rs](https://github.com/floneum/floneum) — pure-Rust Whisper + Parakeet, no Python sidecar
-- [OpenAI](https://platform.openai.com/) — Cloud transcription, AI enhancement, web search (BYOK)
-- [Ollama](https://ollama.com/) — local AI enhancement
-- [Supabase](https://supabase.com/) — auth, account, device registration
-
-The marketing site, account portal, and billing API are a separate Next.js app deployed at [whisper.remskill.com](https://whisper.remskill.com).
-
----
-
 ## Support
 
 - **Bugs / feature requests:** [github.com/Remskill/whisper/issues](https://github.com/Remskill/whisper/issues)
