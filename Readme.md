@@ -6,13 +6,17 @@
 
 **Voice-to-text and real-time web answers for Windows and macOS — pasted straight into the app you're already in.**
 
-[![Download](https://img.shields.io/badge/Download-whisper.remskill.com-blue?style=for-the-badge)](https://whisper.remskill.com/download)
-[![Version](https://img.shields.io/github/v/release/Remskill/whisper?style=for-the-badge&label=Latest)](https://github.com/Remskill/whisper/releases/latest)
+[![Latest version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fwhisper.remskill.com%2Fapi%2Freleases%2Flatest&query=%24.version&prefix=v&label=Latest&style=for-the-badge&color=2ea44f)](https://whisper.remskill.com/download)
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20Apple%20Silicon-lightgrey?style=for-the-badge)]()
 [![Built with Tauri](https://img.shields.io/badge/Built%20with-Tauri%20v2-24C8DB?style=for-the-badge&logo=tauri&logoColor=white)](https://tauri.app/)
-[![Issues](https://img.shields.io/github/issues/Remskill/whisper?style=for-the-badge)](https://github.com/Remskill/whisper/issues)
+[![Free](https://img.shields.io/badge/Local%20features-Free%2C%20no%20card-2ea44f?style=for-the-badge)](https://whisper.remskill.com/pricing)
 
-[Website](https://whisper.remskill.com) · [Download](https://whisper.remskill.com/download) · [Pricing](https://whisper.remskill.com/pricing) · [FAQ](https://whisper.remskill.com/faq) · [Report a bug](https://github.com/Remskill/whisper/issues/new/choose)
+### Download free — no card needed
+
+[![Download for Windows](https://img.shields.io/badge/Download%20for-Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://whisper-releases.remskill.com/latest/Whisper-by-Remskill-setup.exe)
+[![Download for macOS](https://img.shields.io/badge/Download%20for-macOS%20Apple%20Silicon-111111?style=for-the-badge&logo=apple&logoColor=white)](https://whisper-releases.remskill.com/latest/Whisper-by-Remskill-mac.dmg)
+
+[Website](https://whisper.remskill.com) · [All downloads](https://whisper.remskill.com/download) · [Pricing](https://whisper.remskill.com/pricing) · [FAQ](https://whisper.remskill.com/faq) · [Report a bug](https://github.com/Remskill/whisper/issues/new/choose)
 
 ---
 
