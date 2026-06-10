@@ -9,6 +9,7 @@
 [![Download](https://img.shields.io/badge/Download-whisper.remskill.com-blue?style=for-the-badge)](https://whisper.remskill.com/download)
 [![Version](https://img.shields.io/github/v/release/Remskill/whisper?style=for-the-badge&label=Latest)](https://github.com/Remskill/whisper/releases/latest)
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20Apple%20Silicon-lightgrey?style=for-the-badge)]()
+[![Built with Tauri](https://img.shields.io/badge/Built%20with-Tauri%20v2-24C8DB?style=for-the-badge&logo=tauri&logoColor=white)](https://tauri.app/)
 [![Issues](https://img.shields.io/github/issues/Remskill/whisper?style=for-the-badge)](https://github.com/Remskill/whisper/issues)
 
 [Website](https://whisper.remskill.com) · [Download](https://whisper.remskill.com/download) · [Pricing](https://whisper.remskill.com/pricing) · [FAQ](https://whisper.remskill.com/faq) · [Report a bug](https://github.com/Remskill/whisper/issues/new/choose)
@@ -149,6 +150,34 @@ Switch models from Settings → Transcription. You can keep multiple models on d
 ## Auto-updates
 
 The app checks for updates automatically and shows a one-click update banner when a new version is available. Lifetime users receive all updates forever at no additional cost. Releases are published to Cloudflare R2; the desktop app verifies updates against a per-platform signed manifest.
+
+---
+
+## Built with Tauri v2 💜
+
+Whisper by Remskill is a **native desktop app built with [Tauri v2](https://tauri.app/)**.
+
+Tauri is the backbone of this product. Instead of shipping a heavyweight Electron bundle, Tauri v2 gives us a **Rust core behind the system webview** — which is exactly why Whisper installs small, starts fast, runs fully offline, and stays light on memory. Our entire local transcription pipeline runs **in-process in Rust** through Tauri's command and plugin system, and the features that make the app feel native lean directly on Tauri v2:
+
+- **Global hotkey** (push-to-talk from anywhere) — Tauri global-shortcut plugin
+- **Paste-at-cursor** in any app — Tauri clipboard + OS integration
+- **Recording overlay** as a separate always-on-top window — Tauri multi-window
+- **Auto-updates** against a signed per-platform manifest — Tauri updater
+- **Single-instance, deep links, system tray** — Tauri core + plugins
+- **Secure IPC** between the React UI and the Rust backend — Tauri commands
+
+**A huge thank-you to the [Tauri](https://tauri.app/) team and the entire community.** 🙏 Tauri v2 is a genuinely outstanding framework — secure by default, beautifully documented, and a joy to build on. The performance, the tiny installer, and the security model we're able to offer our users are a direct result of the work the Tauri maintainers and contributors pour into the project. We're proud to be part of the ecosystem and grateful for everything you build. 💜
+
+### Full stack
+
+- [**Tauri v2**](https://tauri.app/) — Rust core + system webview: tiny secure installer, global hotkey, clipboard, multi-window, auto-updater
+- [transcribe-rs](https://github.com/floneum/floneum) — pure-Rust Whisper + Parakeet, no Python sidecar
+- [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/) — the in-app UI
+- [OpenAI](https://platform.openai.com/) — cloud transcription, AI enhancement, web search (BYOK)
+- [Ollama](https://ollama.com/) — local AI enhancement
+- [Supabase](https://supabase.com/) — auth, account, device registration
+
+The marketing site, account portal, and billing API are a separate Next.js app deployed at [whisper.remskill.com](https://whisper.remskill.com).
 
 ---
 
